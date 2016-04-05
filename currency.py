@@ -8,40 +8,40 @@ class Currency:
     def __init__(self, amount, currency_code):
         self.amount = amount
         self.currency_code = currency_code
-        currency_symbol_dict = {
-        '$': 'USD',
-        '﹩': 'USD',
-        '＄': 'USD',
-        '€': 'EUR',
-        '¥': 'YEN',
-        '￥': 'YEN',
-        '£': 'GBP',
-        '￡': 'GBP',
-        '₹': 'INR',
-        '₱': 'MXN',
-        }
-        if currency_symbol:
-            for symbol in currency_symbol:
-                if '$' or '﹩' or '＄' in currency_symbol[0]:
-                    self.currency_code = 'USD'
-                    self.amount = float(currency_symbol[1:])
-                elif '€' in currency_symbol[0]:
-                    self.currency_code = 'EUR'
-                    self.amount = float(currency_symbol[1:])
-                elif '¥' or '￥' in currency_symbol[0]:
-                    self.currency_code = 'YEN'
-                    self.amount = float(currency_symbol[1:])
-                elif '£' or '￡' in currency_symbol[0]:
-                    self.currency_code = 'GBP'
-                    self.amount = float(currency_symbol[1:])
-                elif '₹' in currency_symbol[0]:
-                    self.currency_code = 'INR'
-                    self.amount = float(currency_symbol[1:])
-                elif '₱' in currency_symbol[0]:
-                    self.currency_code = 'MXN'
-                    self.amount = float(currency_symbol[1:])
-                else:
-                    raise UnknownCurrencySymbolError
+        #  NEED TO USE *ARGS TO GET THIS TO WORK
+        # '$': 'USD',
+        # '﹩': 'USD',
+        # '＄': 'USD',
+        # '€': 'EUR',
+        # '¥': 'YEN',
+        # '￥': 'YEN',
+        # '£': 'GBP',
+        # '￡': 'GBP',
+        # '₹': 'INR',
+        # '₱': 'MXN',
+        # }
+        # if currency_symbol:
+        #     for symbol in currency_symbol:
+        #         if '$' or '﹩' or '＄' in currency_symbol[0]:
+        #             self.currency_code = 'USD'
+        #             self.amount = float(currency_symbol[1:])
+        #         elif '€' in currency_symbol[0]:
+        #             self.currency_code = 'EUR'
+        #             self.amount = float(currency_symbol[1:])
+        #         elif '¥' or '￥' in currency_symbol[0]:
+        #             self.currency_code = 'YEN'
+        #             self.amount = float(currency_symbol[1:])
+        #         elif '£' or '￡' in currency_symbol[0]:
+        #             self.currency_code = 'GBP'
+        #             self.amount = float(currency_symbol[1:])
+        #         elif '₹' in currency_symbol[0]:
+        #             self.currency_code = 'INR'
+        #             self.amount = float(currency_symbol[1:])
+        #         elif '₱' in currency_symbol[0]:
+        #             self.currency_code = 'MXN'
+        #             self.amount = float(currency_symbol[1:])
+        #         else:
+        #             raise UnknownCurrencySymbolError
 
 
     def __str__(self):

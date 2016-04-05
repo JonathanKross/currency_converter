@@ -25,16 +25,11 @@ class Currency_Converter:
 
     def
 
-    def convert(self, from_currency, to_code):
-        if from_currency.code == to_code:
-            return from_currency
-        elif (to_code not in self.exchange_rate or
-            from_currency.code not in self.exchange_rate):
-            raise UnknownCurrencyCodeError()
-        else:
-            return Currency(to_code, from_currency.value * self.exchange_rate[to_code] / self.exchange_rate)
-
-
-
-if currency_a != currency_b:
-    raise CustomCurrencyCodeError
+    # def convert(self, from_currency, to_code):
+    #     if from_currency.code == to_code:
+    #         return from_currency
+    #     elif (to_code not in self.exchange_rate or
+    #         from_currency.code not in self.exchange_rate):
+    #         raise UnknownCurrencyCodeError()
+    #     else:
+    #         return Currency(to_code, from_currency.value * self.exchange_rate[to_code] / self.exchange_rate)
