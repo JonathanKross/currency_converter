@@ -1,11 +1,11 @@
 class DifferentCurrencyCodeError(Exception):
     pass
-    
+
 class UnknownCurrencySymbolError(Exception):
     pass
 
 class Currency:
-    def __init__(self, amount, currency_code, currency_symbol=None,):
+    def __init__(self, amount, currency_code):
         self.amount = amount
         self.currency_code = currency_code
         currency_symbol_dict = {
@@ -61,23 +61,20 @@ class Currency:
     def __add__(self, other):
         try:
             if self.currency_code == other.currency_code:
-                sum = self.amount + other.amount
-                return sum
+                return Currency(self.amount + other.amount, self.currency_code)
         except:
             raise DifferentCurrencyCodeError()
 
     def __sub__(self, other):
         try:
             if self.currency_code == other.currency_code:
-                diff = self.amount - other.amount
-                return diff
+                return Currency(self.amount - other.amount, self.currency_code)
         except:
             raise DifferentCurrencyCodeError()
 
     def __mul__(self, multiplier):
         try:
-            self.amount = round((self.amount * float(multipier)), 2)
-            return self.amount
+            return Currency(round(self.amount * multiplier), 2), self.currency_code)
         except:
             return "You can only multiply by a float or integer."
 

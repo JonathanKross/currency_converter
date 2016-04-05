@@ -8,37 +8,34 @@ YEN1 = Currency(50.00, 'YEN')
 
 
 class TestCurrency(unittest.TestCase):
-    def test___eq__(self):
-        # self.assertTrue(USD1 == USD2)
+
+    def test__eq__(self):
+        self.assertTrue(USD1 == USD2)
         # self.assertTrue(USD2 == USD1)
         # self.assertFalse(USD1 == USD3)
         # self.assertFalse(USD2 == USD3)
         # self.assertFalse(USD1 == YEN1)
-        pass
 
-    def test___nq__(self):
-        # self.assertFalse(USD1 != USD2)
+    def test__nq__(self):
+        self.assertFalse(USD1 != USD2)
         # self.assertFalse(USD2 != USD1)
         # self.assertTrue(USD1 != USD3)
         # self.assertTrue(USD2 != USD3)
         # self.assertTrue(USD1 != YEN1)
-        pass
 
-    def test___add__(self):
-        # self.assertEqual((USD1 + USD2), 100.00)
+    def test__add__(self):
+        self.assertEqual((USD1 + USD2), 100.00)
         # self.assertEqual((USD2 + USD1), 100.00)
         # self.assertEqual((USD1 + USD3), 75.00)
         # self.assertEqual((USD2 + USD3), 75.00)
         # self.assertEqual((USD1 + YEN1), DifferentCurrencyCodeError)
-        pass
 
-    def test___sub__(self):
-        # self.assertEqual((USD1 - USD2), 0.00)
+    def test__sub__(self):
+        self.assertEqual((USD1 - USD2), 0.00)
         # self.assertEqual((USD2 - USD1), 0.00)
         # self.assertEqual((USD1 - USD3), 25.00)
         # self.assertEqual((USD2 - USD3), 25.00)
         # self.assertEqual((USD1 - YEN1), DifferentCurrencyCodeError)
-        pass
 
 
     # def test_list_normal_words(self):
